@@ -142,7 +142,7 @@ jobs:
     - name: Keep Services Running with Tunnel Keepalive
       run: |
         Write-Output "Maintaining connection with active keepalive for 5 hours..."
-        for ($i = 0; $i -lt 1667; $i++) {
+        for ($i = 0; $i -lt 2500; $i++) {
           Start-Sleep -Seconds 10
           
           # Check and restart RDP service
@@ -167,7 +167,7 @@ jobs:
             $tcpClient.SendTimeout = 3000
             $tcpClient.Connect("127.0.0.1", 3389)
             $tcpClient.Close()
-            Write-Output "✅ Check $($i+1)/1667 - RDP port active, tunnel alive"
+            Write-Output "✅ Check $($i+1)/2500 - RDP port active, tunnel alive"
           } catch {
             Write-Output "⚠️ RDP port test failed - may indicate tunnel issues"
           }
