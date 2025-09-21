@@ -1,6 +1,6 @@
 name: WINDOWS RDP with Bore TCP
 
-on: workflow_dispatch: {}
+on: workflow_dispatch:
 
 jobs: secure-rdp: runs-on: windows-latest steps: - name: Enhanced RDP Configuration run: | Write-Output "Configuring RDP with enhanced settings..."
 
